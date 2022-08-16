@@ -1,0 +1,130 @@
+/* boilerplate css */
+:root {
+	--primary-dark: #222525;
+	--primary-light: #f2f2f2;
+	--primary-pink: #e848c3;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--primary-dark);
+	background-color: var(--primary-light);
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-tertiary);
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* header */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	background-color: var(--primary-pink);
+	color: var(--primary-light);
+}
+
+header h1 {
+	font-size: 2rem;
+	font-weight: 400;
+	width: 100%;
+	margin: 0;
+	text-align: center;
+}
+
+/* main */
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	background-color: var(--primary-light);
+	color: var(--primary-dark);
+}
+/* main-menu-categoreis */
+.main-menu-categories {
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+	align-items: center;
+	padding: 1rem;
+	flex-shrink: 1;
+	flex-wrap: nowrap;
+	flex-basis: 0px;
+	gap: 1rem;
+}
+/* drinks with overlay and text */
+.drinks,
+.food,
+.alcohol {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+/* overlay text for drinks */
+.main-menu-category-text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+/* main-menue-category-image */
+.main-menu-category-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	overflow: hidden;
+}
+
+.main-menu-category-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* zoom image when hover on main-menu-category-text */
+.drinks:hover .main-menu-category-image img {
+	transition: all 300ms ease-in;
+	transform: scale(1.2);
+}
+.food:hover .main-menu-category-image img {
+	transition: all 300ms ease-in;
+	transform: scale(1.2);
+}
+
+.alcohol:hover .main-menu-category-image img {
+	/* scale slowly */
+	transition: all 300ms ease-in;
+	transform: scale(1.2);
+}
