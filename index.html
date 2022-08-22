@@ -9,41 +9,65 @@
 	</head>
 	<body>
 		<header>
-			<h1 class="main-title">WXYZ Bar Menu</h1>
+			<div class="hero-container container">
+				<h1>WXYZ Bar Menu</h1>
+				<h2>The best bar in town</h2>
+			</div>
 		</header>
 		<main>
-			<div class="main-menu-categories">
-				<!-- card with one big picture and text overlay -->
-				<div class="main-menu-category drinks">
-					<div class="main-menu-category-image">
-						<img src="imgs/drink.jpeg" alt="drinks" />
-					</div>
-					<div class="main-menu-category-text">
-						<h2>Drinks</h2>
-					</div>
-				</div>
-				<!-- card with one big picture and text overlay -->
-				<div class="main-menu-category food">
-					<div class="main-menu-category-image">
-						<img src="imgs/food.jpeg" alt="food" />
-					</div>
-					<div class="main-menu-category-text">
-						<h2>Food</h2>
-					</div>
-				</div>
-				<!-- card with one big picture and text overlay -->
-				<div class="main-menu-category alcohol">
-					<div class="main-menu-category-image">
-						<img src="imgs/alcohol.jpeg" alt="alcohol" />
-					</div>
-					<div class="main-menu-category-text">
-						<h2>Alcohol</h2>
-					</div>
-				</div>
+			<div class="container">
+				<nav class="main-nav">
+					<ul>
+						<li><a href="#" id="drinks" class="active">Drinks</a></li>
+						<li><a href="#" id="food">Food</a></li>
+					</ul>
+				</nav>
 			</div>
 		</main>
+		<section class="drinks container">
+			<div class="section-header">
+				<h3>Drinks</h3>
+				<p class="section-desctiption">
+					Mix and mingle around some signature sips and a full snack-attack
+					menu.
+				</p>
+				<!-- horizontal sliding nav -->
+				<nav class="horizontal-nav">
+					<span class="btn scroll-right">Prev</span>
+					<div class="horizontal-scrolling-cards">
+						<div class="card beer active">
+							<h4>Beer</h4>
+						</div>
+						<div class="card wine">
+							<h4>Wine</h4>
+						</div>
+						<div class="card cocktail">
+							<h4>Cocktail</h4>
+						</div>
+						<div class="card liqure">
+							<h4>Liqure</h4>
+						</div>
+						<div class="card soft-cold">
+							<h4>Soft Cold</h4>
+						</div>
+						<div class="card soft-hot">
+							<h4>Soft Hot</h4>
+						</div>
+						<div class="card mocktail">
+							<h4>Mocktail</h4>
+						</div>
+						<div class="card shots">
+							<h4>Shots</h4>
+						</div>
+					</div>
+					<span class="btn scroll-left">Next</span>
+				</nav>
+			</div>
+		</section>
 		<footer>
 			<p>&copy; 2019 WXYZ Bar</p>
 		</footer>
+
+		<script src="./js/app.js"></script>
 	</body>
 </html>

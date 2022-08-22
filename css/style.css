@@ -13,6 +13,7 @@ html {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	list-style: none;
 }
 
 body {
@@ -33,7 +34,12 @@ a {
 a:hover {
 	text-decoration: underline;
 }
-
+/* utilities */
+.container {
+	width: 80%;
+	margin: 0 auto;
+	padding: 0 20px;
+}
 /* header */
 header {
 	display: flex;
@@ -42,6 +48,16 @@ header {
 	padding: 1rem;
 	background-color: var(--primary-pink);
 	color: var(--primary-light);
+	background-image: url(https://assets.micontenthub.com/DXBIZ/menus/1638966552-MCDay49of11.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 15rem;
+}
+
+.hero-container {
+	text-align: center;
+	width: 100%;
 }
 
 header h1 {
@@ -52,79 +68,140 @@ header h1 {
 	text-align: center;
 }
 
-/* main */
-main {
+/* main nav */
+.main-nav ul {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	align-items: center;
-	padding: 1rem;
-	background-color: var(--primary-light);
-	color: var(--primary-dark);
-}
-/* main-menu-categoreis */
-.main-menu-categories {
-	display: flex;
-	justify-content: center;
-	width: 100vw;
-	align-items: center;
-	padding: 1rem;
-	flex-shrink: 1;
-	flex-wrap: nowrap;
-	flex-basis: 0px;
+	justify-content: space-between;
 	gap: 1rem;
-}
-/* drinks with overlay and text */
-.drinks,
-.food,
-.alcohol {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	width: 50vw;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 	position: relative;
 }
-/* overlay text for drinks */
-.main-menu-category-text {
-	position: absolute;
-	top: 0;
-	left: 0;
+
+.main-nav ul::after {
+	content: "";
+	display: block;
 	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
+	height: 0;
+	border-top: solid 1px var(--primary-light);
+	border-left: solid 1px var(--primary-light);
+	border-bottom: solid 1px var(--primary-light);
+	margin: 0 auto;
+	margin-top: 1rem;
+	position: absolute;
+	bottom: 0;
+	/* black box shadow */
+	box-shadow: #0b0b0b4f 0px -4px 3.5px 0.5px;
 }
 
-/* main-menue-category-image */
-.main-menu-category-image {
+.main-nav ul li {
+	display: block;
+	margin: 0;
+	padding: 0;
+	font-size: 1.5rem;
+	font-weight: 400;
+	color: var(--primary-dark);
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+	width: 45%;
+	text-align: center;
+}
+
+.main-nav ul li a {
+	color: var(--primary-dark);
+	text-decoration: none;
+	padding: 1rem;
+	display: block;
+}
+
+.main-nav ul li a#drinks {
+	background-color: #6797d9;
+}
+.main-nav ul li a#drinks.active {
+	background-color: #4c76b1;
+	color: #f2f2f2;
+}
+.main-nav ul li a#drinks:hover {
+	background-color: #6797d9;
+	transition: all 0.3s ease-in-out;
+}
+
+.main-nav ul li a#food {
+	background-color: #f05ec5;
+}
+
+.main-nav ul li a#food.active {
+	background-color: #d04c9f;
+	color: #f2f2f2;
+}
+
+.main-nav ul li a#food:hover {
+	background-color: #d04c9f;
+	transition: all 0.3s ease-in-out;
+}
+
+/* horizontal-nav */
+.horizontal-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
 	width: 100%;
-	height: 100%;
-	object-fit: cover;
+	margin: 0;
+	padding: 0;
+	position: relative;
 	overflow: hidden;
 }
 
-.main-menu-category-image img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.horizontal-scrolling-cards {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	width: 78%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
 }
 
-/* zoom image when hover on main-menu-category-text */
-.drinks:hover .main-menu-category-image img {
-	transition: all 300ms ease-in;
-	transform: scale(1.2);
+.horizontal-scrolling-cards .card {
+	width: 10rem;
+	height: calc(100% / 3 - 1rem);
+	background-color: var(--primary-pink);
+	padding: 1rem;
+	text-align: center;
+	color: var(--primary-light);
+	transition: all 0.3s ease-in-out;
+	flex-shrink: 0;
 }
-.food:hover .main-menu-category-image img {
-	transition: all 300ms ease-in;
-	transform: scale(1.2);
+/* scroll buttons */
+.scroll-left,
+.scroll-right {
+	background-color: #0b0b0b4f;
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 5rem;
+	z-index: 1;
 }
 
-.alcohol:hover .main-menu-category-image img {
-	/* scale slowly */
-	transition: all 300ms ease-in;
-	transform: scale(1.2);
+.btn {
+	background-color: #0b0b0b4f;
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 5rem;
+}
+.btn:hover {
+	background-color: #0b0b0b;
+	color: #f2f2f2;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
 }
